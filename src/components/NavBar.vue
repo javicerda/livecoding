@@ -19,7 +19,7 @@
           <template v-slot:button-content>
             <em>Ingresar</em>
           </template>
-          <b-dropdown-item href="#">Editar cursos</b-dropdown-item>
+          <b-dropdown-item href="/crear">Editar cursos</b-dropdown-item>
           <b-dropdown-item href="#" @click="logout">Cerrar sesión</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>

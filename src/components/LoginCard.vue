@@ -15,6 +15,7 @@
       id="inline-form-input-name"
       class="mb-2 mr-sm-2 mb-sm-0"
       placeholder="Password"
+      type="password"
       v-model="password"
     ></b-input>
 
