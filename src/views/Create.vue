@@ -1,9 +1,9 @@
 <template>
-    <div>
-         <h1 class="my-5">Crear nuevos cursos</h1>
-         <create-form/>
-         <list-courses/>
-    </div>
+  <div>
+    <b-button class="my-5" variant="danger"  v-b-modal.create-course >Crear nuevo curso</b-button>
+    <list-courses/>
+    <create-form/>
+  </div>
 </template>
 
 <script>
@@ -14,6 +14,6 @@ export default {
   components:{
     CreateForm,
     ListCourses
-  }
+  },
 }
 </script>

@@ -8,18 +8,20 @@ const baseURL = 'https://us-central1-livecoding-school.cloudfunctions.net/course
 
 function emptyCourse() {
   return {
-   id: null,
-   data: {
-     name: '',
-     description: '',
-     imagen: ''
-     }
+    id: null,
+    data: {
+      name: '',
+      description: '',
+      imagen: '',
+      example: { }
+      }
     }
   }
 export default new Vuex.Store({
   state: {
     courses: [],
     currentCourse: emptyCourse(),
+    showForm: false,
   },
   mutations: {
     SET_EMPTY_COURSE(state) {
@@ -30,10 +32,12 @@ export default new Vuex.Store({
       })
     },
     SET_COURSES(state, data) { state.courses = data },
+    DISPLAY_COURSE_FORM(state) { state.showForm = true },
     UPDATE_NAME(state, name) { state.currentCourse.data.name = name},
     UPDATE_DESCRIPTION(state, description) { state.currentCourse.data.description = description},
     UPDATE_IMAGEN(state, imagen) { state.currentCourse.data.imagen = imagen},
     SET_CURRENT_COURSE(state, course){ state.currentCourse = course },
+    
   },
   actions: {
     setCourses ({ commit}){
@@ -49,11 +53,10 @@ export default new Vuex.Store({
       dispatch('setCourses')
       })
     },
-    deleteToy({ dispatch }, id){
+    deleteCourse({ dispatch }, id){
       axios.delete(`${baseURL}/course/${id}`)
       .then(() => {
         dispatch('setCourses')
-    
       })
     },
     setCurrentCourse({ commit }, id){
@@ -71,6 +74,7 @@ export default new Vuex.Store({
     updateName ({ commit }, name) { commit('UPDATE_NAME', name)},
     updateDescription ({ commit }, description) { commit('UPDATE_DESCRIPTION', description)},
     updateImagen ({ commit }, imagen) { commit('UPDATE_IMAGEN', imagen)},
+    displayCourseForm ({ commit }) { commit('DISPLAY_COURSE_FORM')},
   },
   modules: {
   }

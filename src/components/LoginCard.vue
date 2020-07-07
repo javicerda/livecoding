@@ -1,27 +1,30 @@
 <template>
 <div class="container">
 <b-card>
-  <b-form inline class="mx-auto">
+  <b-form inline class="py-3">
     <label class="sr-only" for="inline-form-input-name">Mail</label>
     <b-input
       id="inline-form-input-name"
-      class="mb-2 mr-sm-2 mb-sm-0"
       placeholder="Ingresa tu correo"
       v-model="user"
+      class="ml-5"
     ></b-input>
 
     <label class="sr-only" for="inline-form-input-username">Contraseña</label>
     <b-input
       id="inline-form-input-name"
-      class="mb-2 mr-sm-2 mb-sm-0"
       placeholder="Password"
       type="password"
       v-model="password"
+      class="ml-5"
     ></b-input>
 
-    <b-button variant="primary" @click="login">ingresar</b-button>
+    <b-form-checkbox class="ml-5">Recordar mi usuario</b-form-checkbox>
+
+    <b-button class="ml-5" variant="danger" @click="login">ingresar</b-button>
   </b-form>
 </b-card>
+<b-button class="mt-5" variant="dark" href="/">Volver al Home</b-button>
 </div>
 </template>
 
